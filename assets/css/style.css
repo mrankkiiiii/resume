@@ -14,7 +14,7 @@ body::-webkit-scrollbar {
 #header{
 	opacity: 0.9;
 	height: 65vh;
-	background-image: url(image/header.jpg);
+	background-image: url(../images/header.jpg);
 	background-position: center;
 	background-size: cover;
 	background-attachment: fixed;
