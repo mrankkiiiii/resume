@@ -119,17 +119,19 @@ body::-webkit-scrollbar {
 .social-icon li:hover{
 	box-shadow: 0px 0px 6px 4px rgba(230, 196, 196, 0.3);
 }
-/*.social-icon li a img{
-	height: 1.5rem;
-	width: 1.5rem;
-	padding: 10px;
-}*/
+
 .social-icon li a i{
     //height: 1.5rem;
     //width: 1.5rem;
+	//color:orange;
+    padding: 10px;
+	//background-color: black;
+}
+.social-icon li a img{
+    height: 1.8rem;
+    width: 1.8rem;
     padding: 10px;
 }
-
 /*Section Classes*/
 
 section {
@@ -444,7 +446,7 @@ textarea {
     font-size: 0.95rem;
     border: 2px solid white;
     margin-top: 5%;
-    margin-left: 35%;
+    margin-left: 25%;
     border-radius: 2px;
     color: white;
     font-family: sans-serif;
