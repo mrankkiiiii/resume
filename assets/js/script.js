@@ -1,19 +1,16 @@
+//for smooth scrolling
 var navMenuAnchorTags = document.querySelectorAll('.navigation-menu a');
 var interval;
-
-console.log(navMenuAnchorTags);
-for (var i = 0; i < navMenuAnchorTags.length; i++) {
+for (let i = 0; i < navMenuAnchorTags.length; i++) {
     navMenuAnchorTags[i].addEventListener('click', function (event) {
         event.preventDefault();
         var targetSectionID = this.textContent.trim().toLowerCase();
-        console.log(this.textContent);
         var targetSection = document.getElementById(targetSectionID);
-        console.log(targetSection);
         //    interval = setInterval(scrollVertically, 20, targetSection);
          //or we can write function like below
         interval = setInterval(function () {
             scrollVertically(targetSection);
-        }, 20);
+        }, 10);
     });
 }
 
@@ -26,14 +23,32 @@ function scrollVertically(targetSection) {
     window.scrollBy(0, 50);
 }
 
+// back to top function
+var intervaltop;
+var topbtn = document.querySelector('#topbtn');
 
+window.addEventListener('scroll', function(){
+    if (document.documentElement.scrollTop > 20) {
+        topbtn.style.display = "block";
+    } else {
+        topbtn.style.display = "none";
+    }
+});
+topbtn.addEventListener('click',function(event){
+    event.preventDefault();
+    intervaltop = setInterval(function(){
+        console.log(intervaltop)
+        if(document.documentElement.scrollTop <= 0 ){
+            clearInterval(intervaltop);
+            return;
+        }
+        window.scrollBy(0,-100);
+    },10)
+});
 
 
 // to filling the skills bar
-
-
 var progressBars = document.querySelectorAll(".skill-progress > a > div");
-
 
 function initialiseBar(bar) {
     bar.setAttribute("data-visited", false);
@@ -85,4 +100,4 @@ function checkScroll() {
 window.addEventListener("scroll", checkScroll);
 
 // This event fills the progress bars if they are displayed on the screen when the page is loaded.
-//window.addEventListener("load", checkScroll);
+// window.addEventListener("load", checkScroll);
