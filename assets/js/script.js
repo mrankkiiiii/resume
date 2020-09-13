@@ -46,6 +46,20 @@ topbtn.addEventListener('click',function(event){
     },10)
 });
 
+// top scroll progress
+var scrollbar = document.getElementById('scroll-bar');
+function getDocHeight() {
+    var D = document;
+    return Math.max(
+        D.body.scrollHeight, D.body.offsetHeight, D.body.clientHeight
+    );
+}
+var docHeight = getDocHeight();
+var windowHeight = window.innerHeight;
+window.addEventListener('scroll', function(){
+    var scrolled = Math.floor((window.scrollY/(docHeight-windowHeight))*100);
+    scrollbar.style.width = scrolled+ '%';
+})
 
 // to filling the skills bar
 var progressBars = document.querySelectorAll(".skill-progress > a > div");
@@ -58,8 +72,6 @@ function initialiseBar(bar) {
 for (var bar of progressBars) {
     initialiseBar(bar);
 }
-
-
 
 function fillBar(bar) {
 
