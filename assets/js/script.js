@@ -85,10 +85,7 @@ function fillBar(bar) {
         currentWidth++;
         bar.style.width = currentWidth + '%';
     }, 10);
-
 }
-
-
 
 // This function uses a for loop for individual progress bars.
 function checkScroll() {
@@ -103,11 +100,8 @@ function checkScroll() {
             bar.setAttribute("data-visited", false);
             initialiseBar(bar);
         }
-
     }
 }
-
-
 
 window.addEventListener("scroll", checkScroll);
 
